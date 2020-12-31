@@ -1,5 +1,6 @@
 # TJAAG
-January 2021 Fellows Research &amp; Data Project for TJAAG
+<b>January 2021 Fellows Research &amp; Data Project for TJAAG</b>
+<br><br>
 I will be focused on modeling the relationship between geography, wealth, and admissions.
 
 Create charts showing:
