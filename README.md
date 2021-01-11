@@ -3,6 +3,8 @@
 <br><br>
 I will be focused on modeling the relationship between geography, wealth, and admissions.
 
+Check out the .ipynb file above to explore where I'm at in the project thus far!
+
 Create charts showing:
 - avg wealth of an MS [I think that means middle school] median income over time
 - TJ admittances by middle school over time (highlight)
