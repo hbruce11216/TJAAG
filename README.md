@@ -1,50 +1,14 @@
 # TJAAG
 <b>January 2021 Fellows Research &amp; Data Project for TJAAG</b>
 <br><br>
-I will be focused on modeling the relationship between geography, wealth, and admissions.
+I on modeling the relationship between geography, wealth, and admissions.
 
-Check out the .ipynb file above to explore where I'm at in the project thus far!
+Check out the JAN 31 ... .ipynb file above to explore where I'm at in the project thus far!
 
 
-Notes for myself on expectations surrounding the project: 
-Create charts showing:
-- avg wealth of an MS [I think that means middle school] median income over time
-- TJ admittances by middle school over time (highlight)
-- Relationship between draw district median income and TJ admittees; for AAP centers make sure to also compare their regular district vs AAP draw area;
-- time-series chloropleths showing the change in the geographic distribution of wealth and TJ admittees over time
+### Project Overview:
+This was a fascinating project to work on. The non-profit organization Thomas Jefferson Alumni Action Group (TJAAG)'s goal is to pass legislation to deconstruct the systemic problems within the Fairfax County Public Schools that are disadvantaging African-American students. Last year, less than 1% of accepted students were black despite there being a much higher percentage of African Americans living in the region. I have found that the admissions rates to this prestigious school are strongly correlated with middle schools that have more funding and better access to Advanced Academic Placement programs. In an attempt to illuminate the disparity, I am creating a dashboard of interactive maps and data visualizations that will be used by TJAAG to educate the Virginia Senators and Board of Education officials. 
 
-Datasets they gave:
-- FCAG applicant/semifinalist/admitted data by school over; census data on median income by census tract or zip code over time 
-- FFXco GIS data for boundaries and zip codes
-- GIS tools:
-  - https://www.qgis.org/en/site/, 
-  - https://app.datawrapper.de/create/map 
+Last month, TJAAG hired me to conduct a GIS project modeling the relationship between wealth, location, and admissions rates for middle school students applying to the Thomas Jefferson High School for Science and Technology in Fairfax County, Virginia. There are 26 middle schools in the county and I need to estimate the median family income for each student. Middle school attendance zones are not based on zip codes but are manually drawn by the county’s education committee. I found shapefiles for these areas as well as complete block-group-level income data across the county.
 
-Other notes on the subject:
-- Project Summary:  Examining the correlation (or lack thereof) between the geographic shift in wealth throughout the county and the shift in TJ feeder schools over time
-
-Data sets necessary: 
-- TJ admissions by middle school over time
-Wealth by zipcode, over time
-- FCPS middle school boundaries (ideally over time, not necessarily)
-- ZIP code boundaries
-- List of GT/AAP center schools over time (ideal but not necessary)
-
-Deliverables:
-- Descriptive analysis of wealth of a middle school’s draw district and # of admittees to TJ
-- Series of choropleths showing the geographic distributions of wealth and TJ admits over time in Fairfax county
-- Sankey diagrams disaggregated by middle schools for applied, semi, admitted 
-  ^^ ideally animated
-
-Timeline:
-- To frame this since it has the sharpest timeline: I'll be checking with the executive board on when the secretary of education wants us to have this done, but a rough timeline I was thinking for an informal release is as follows:
-- Familiarization of data, lit review, ideas for analyses: due 1/3/2020
-- Analyses + basic visualizations: due 1/17/2020
-- Report for review by E-board and more: due 1/22/2020
-
-I recognize that it's a pretty short timeline (especially for the report) but there are 4 of you so I think it's very doable to generate a comprehensive report and compelling set of analyses; the short turnaround from analysis should report should also specifically encourage focusing on a concise, digestible deliverable -- as much as I love analyses, they'll go over the heads of most legislators and policymakers.  Focus on the takeaways, impacts, and consequences... but we'll cross that bridge when we get there
-
-Longform report for reference:
-- https://drive.google.com/file/d/1KrgUaOndkYsOfESitQbk5PkiPcblUQMt/view?usp=sharing
-Shortform deliverable for reference (Makya is a graphic designer, so she turns the highlights of our reports into these):
-- https://static1.squarespace.com/static/5f4289cac951f24569ad9488/t/5fca3f05ec1d586fb398591c/1607089926415/TJAAG-LotterySchoolsOverview.pdf
+Each middle school draws from multiple zip codes, towns, and block groups so, while these two geometries are not perfect matches, I thought it made the most sense to calculate a weighted average of the family income for a middle school student based on the aggregate data from the various portions of the regions that comprise each middle school attendance area zone. I achieved that by finding the centroid of each block group, overlaying the geometric boundaries for the middle school attendance areas, then took the cumulative value sum for those regions contained by the intersecting polygons to return an estimated aggregate family average income for a middle school student in that region. 
