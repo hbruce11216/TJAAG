@@ -2,7 +2,7 @@
 <b>January 2021 Fellows Research &amp; Data Project for TJAAG</b>
 <br><br>
 
-Check out the JAN 31... .ipynb file above to explore where I'm at in the project thus far! I modeled the relationship between geography, wealth, and admissions in Fairfax County, VA.
+Check out the "JAN 31 TJAAG - Research & Analysis.html" file above to explore where I'm at in the project thus far! I modeled the relationship between geography, wealth, and admissions in Fairfax County, VA.
 
 ### Project Overview:
 This was a fascinating project to work on. The non-profit organization Thomas Jefferson Alumni Action Group (TJAAG)'s goal is to pass legislation to deconstruct the systemic problems within the Fairfax County Public Schools that are disadvantaging African-American students. Last year, less than 1% of accepted students were black despite there being a much higher percentage of African Americans living in the region. I have found that the admissions rates to this prestigious school are strongly correlated with middle schools that have more funding and better access to Advanced Academic Placement programs. In an attempt to illuminate the disparity, I am creating a dashboard of interactive maps and data visualizations that will be used by TJAAG to educate the Virginia Senators and Board of Education officials. 
